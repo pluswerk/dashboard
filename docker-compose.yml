@@ -1,0 +1,26 @@
+version: '3.5'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    volumes:
+      - .:/app
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ~/.ssh:/home/application/.ssh
+      - ~/.composer/cache:/home/application/.composer/cache
+      - ~/.gitconfig:/home/application/.gitconfig
+
+    environment:
+      - VIRTUAL_HOST=dashboard.${TLD_DOMAIN:-docker},dashboard.foo.${TLD_DOMAIN}
+      - WEB_DOCUMENT_ROOT=/app
+      - APPLICATION_UID=${APPLICATION_UID:-1000}
+      - APPLICATION_GID=${APPLICATION_GID:-1000}
+
+    working_dir: /app
+networks:
+  default:
+    external:
+      name: global
