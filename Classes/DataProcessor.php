@@ -1,10 +1,10 @@
 <?php
+
 declare(strict_types=1);
 
-namespace PLUSWERK\Dashboard;
+namespace Pluswerk\Dashboard;
 
 use stdClass;
-
 
 final class DataProcessor
 {
@@ -34,7 +34,7 @@ final class DataProcessor
 
     public function process(): array
     {
-        foreach ($this->jsonContainerData as $container){
+        foreach ($this->jsonContainerData as $container) {
             $virtualHostsEnvArray = $this->getVirtualHostEnvVariable($container);
             $virtualHosts = $this->processVirtualHostEnvVariable($virtualHostsEnvArray);
             $dataEntry = ['name' => $container->Name, 'domains' => $virtualHosts];

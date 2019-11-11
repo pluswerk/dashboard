@@ -2,8 +2,8 @@
 
 require "vendor/autoload.php";
 
-use PLUSWERK\Dashboard\HtmlProcessor;
-use PLUSWERK\Dashboard\DataProcessor;
+use Pluswerk\Dashboard\HtmlProcessor;
+use Pluswerk\Dashboard\DataProcessor;
 
 $containerDataProcessor = new DataProcessor();
 $data = $containerDataProcessor->process();

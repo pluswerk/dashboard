@@ -1,7 +1,20 @@
 {
+  "name": "pluswerk/dashboard",
+  "license": "MIT",
   "autoload": {
     "psr-4": {
-      "PLUSWERK\\Dashboard\\": "Classes"
+      "Pluswerk\\Dashboard\\": "Classes"
+    }
+  },
+  "require": {
+    "pluswerk/grumphp-config": "2.9.*"
+  },
+  "extra": {
+    "pluswerk/grumphp-config": {
+      "auto-setting": true
+    },
+    "grumphp": {
+      "config-default-path": "vendor/pluswerk/grumphp-config/grumphp.yml"
     }
   }
 }

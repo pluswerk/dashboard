@@ -1,8 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
-namespace PLUSWERK\Dashboard;
-
+namespace Pluswerk\Dashboard;
 
 final class HtmlProcessor
 {
